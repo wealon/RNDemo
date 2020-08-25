@@ -36,10 +36,6 @@ export default class MyFlatListClass extends React.Component {
     ],
   };
 
-  componentDidMount() {
-    console.log("componentDidMount");
-  }
-
   _onButtonPress() {
     console.log("Click" + "_onButtonPress");
   }

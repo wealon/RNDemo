@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "yarn react-native run-ios --device '刘志祥的 iPhone 7plus'",
+    "ios": "yarn react-native run-ios --simulator",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."

@@ -7,11 +7,14 @@ import HelloWorldApp from "./helloword";
 import MyFlatList from "./components/list/MyFlatList";
 import MyFlatListClass from "./components/list/MyFlatListClass";
 import MyLifeMethodClass from "./components/lifeMethod";
+import Son from "./components/son.js";
+import Father from "./components/father.js";
 
 class RNApp extends React.Component {
   render() {
     return (
-      <MyLifeMethodClass />
+      <Father></Father>
+      // <MyLifeMethodClass />
       // <MyFlatListClass
       //   data={[
       //     { key: "Tom" },

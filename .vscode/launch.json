@@ -9,7 +9,7 @@
       "cwd": "${workspaceFolder}",
       "type": "reactnative",
       "request": "launch",
-      "target": "device",
+      "target": "simulator",
       "platform": "ios"
     },
     {
