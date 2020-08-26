@@ -1,9 +1,24 @@
 import React, { Component } from "react";
-import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  Button,
+  NativeModules,
+} from "react-native";
+
+var XSHUDManager = NativeModules.XSHUDManager;
 
 export default class MemberCardPage extends React.Component {
+  // 专门写一个文件来处理 RN与原生的通信
+  _onButtonPress() {
+    console.log("Click" + "_onButtonPress");
+    XSHUDManager.showToast("Hello iOS");
+  }
+
   render() {
-    console.log(this.props);
     return (
       <SafeAreaView style={styles.root}>
         <ScrollView style={styles.scrollView}>
@@ -13,6 +28,7 @@ export default class MemberCardPage extends React.Component {
           <View style={styles.two}>
             <View style={styles.card}>
               <Text style={styles.text}>卡</Text>
+              <Button title="调用原生" onPress={this._onButtonPress}></Button>
             </View>
             <View style={styles.card}>
               <Text style={styles.text}>卡</Text>
