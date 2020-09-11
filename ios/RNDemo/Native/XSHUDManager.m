@@ -25,13 +25,19 @@ RCT_EXPORT_METHOD(showToast:(NSString *)toast)
     dispatch_async(dispatch_get_main_queue(), ^{
         [XSHUDManager showToast:toast targetView:nil];
     });
+    
+    if (self.bridge) {
+//        [self.bridge enqueueJSCall:@"Communication" method:@"viewWillAppear" args:nil completion:^{
+//
+//        }];
+//        [self.bridge.eventDispatcher sendAppEventWithName:@"eventName" body:@{@"name":@"Himi",@"age": @12}];
+        [self sendEventWithName:<#(NSString *)#> body:<#(id)#>];
+    }
 }
 
-RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
+- (NSArray<NSString *> *)supportedEvents
 {
-  NSString *location = [RCTConvert NSString:details[@"location"]];
-  NSDate *time = [RCTConvert NSDate:details[@"time"]];
-  
+    return @[@"EventA"];
 }
 
 

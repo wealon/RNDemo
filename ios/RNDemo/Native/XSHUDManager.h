@@ -10,9 +10,12 @@
 #import <React-Core/React/RCTBridgeModule.h>
 #import <React-Core/React/RCTConvert.h>
 
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XSHUDManager : NSObject <RCTBridgeModule>
+@interface XSHUDManager : RCTEventEmitter <RCTBridgeModule>
 
 
 @end
