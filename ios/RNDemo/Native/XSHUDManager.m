@@ -8,6 +8,7 @@
 
 #import "XSHUDManager.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "AppDelegate.h"
 
 @implementation XSHUDManager
 
@@ -31,8 +32,21 @@ RCT_EXPORT_METHOD(showToast:(NSString *)toast)
 //
 //        }];
 //        [self.bridge.eventDispatcher sendAppEventWithName:@"eventName" body:@{@"name":@"Himi",@"age": @12}];
-        [self sendEventWithName:<#(NSString *)#> body:<#(id)#>];
+//        [self sendEventWithName:<#(NSString *)#> body:<#(id)#>];
     }
+}
+
+// RN调用原生
+RCT_EXPORT_METHOD(closePage)
+{
+    NSLog(@"closePage");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        UINavigationController *rootNav = (UINavigationController *)window.rootViewController;
+        [rootNav popViewControllerAnimated:YES];
+        
+    });
 }
 
 - (NSArray<NSString *> *)supportedEvents

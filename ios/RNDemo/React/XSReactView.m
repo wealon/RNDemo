@@ -11,11 +11,15 @@
 
 @interface XSReactView ()
 
-@property (nonatomic, strong) RCTRootView *mRootView;
+@property (nonatomic, weak) RCTRootView *mRootView;
 
 @end
 
 @implementation XSReactView
+
+- (void)dealloc{
+    self.mRootView = nil;
+}
 
 
 - (instancetype)initWithFrame:(CGRect)frame

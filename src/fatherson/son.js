@@ -11,6 +11,28 @@ import {
 } from "react-native";
 
 export default class Son extends React.Component {
+  // 构造函数
+  constructor(props) {
+    super(props);
+    console.log(">>>Life Method Son constructor");
+    this.state = {};
+  }
+
+  componentDidMount() {
+    console.log(">>>Life Method Son componentDidMount 加载完成");
+  }
+
+  componentWillUnmount() {
+    console.log(">>>Life Method Son componentWillUnmount 卸载");
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log("Son.props = ", props);
+    console.log("Son.state = ", state);
+    console.log(">>>Life Method Son getDerivedStateFromProps");
+    return null;
+  }
+
   sendAge() {
     console.log("sendAge");
     this.props.age(30);
@@ -21,6 +43,7 @@ export default class Son extends React.Component {
     DeviceEventEmitter.emit("sendAge", 40);
   }
   render() {
+    console.log(">>>Life Method Son render");
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Hello , {this.props.name}</Text>
@@ -41,7 +64,7 @@ const styles = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
     marginTop: 100,
-    // backgroundColor: "yellow",
+    backgroundColor: "yellow",
   },
   text: {
     fontSize: 24,

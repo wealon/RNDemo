@@ -1,10 +1,12 @@
 import React from "react";
 import { AppRegistry } from "react-native";
-import Communication from "./src/communication/communication";
+import Father from "./src/fatherson/Father";
+import LifeCycle from "./src/lifeCycle/LifeCycle";
 
 class RNApp extends React.Component {
   render() {
-    return <Communication />;
+    // return <Father />;
+    return <LifeCycle></LifeCycle>;
   }
 }
 
